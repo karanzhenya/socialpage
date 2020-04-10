@@ -1,19 +1,17 @@
 import React from "react";
-import style from './Profile.module.css';
-import MyPosts from "./MyPosts/MyPosts";
+import style from './ProfileInfo.module.css';
 
-const Profile = () => {
+const ProfileInfo = () => {
     return (
         <div>
             <div>
-                <img src='https://pic.xenomorph.ru/2015-06/1433421189_wide01.jpg'></img>
+                <img width="100%"src='https://pic.xenomorph.ru/2015-06/1433421189_wide01.jpg'></img>
             </div>
-            <div>
-                ava+discription
+            <div className={style.descriptionBlock}>
+                ava + description
             </div>
-            <MyPosts/>
         </div>
     )
 };
 
-export default Profile;
+export default ProfileInfo;
