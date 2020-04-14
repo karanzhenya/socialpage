@@ -2,18 +2,19 @@
 display: grid;
     grid-template-columns: 2fr 10fr;
 }
-
+.dialogs .name {
+    color: white;
+}
 .dialogsItems {
 padding: 10px;
-    color: white;
 }
 
 .dialogsItems .active {
     color: gold;
 }
 
-.dialog {
-
+.name {
+    color: white;
 }
 
 .messages .message {

@@ -6,6 +6,15 @@
     color: white;
     text-decoration: none;
 }
+
+.item a:hover {
+    color: hotpink;
+    font-size: 1.5em;
+    }
 .item a.activeLink {
     color: gold;
+}
+.item a.activeLink:hover {
+    color: hotpink;
+    font-size: 1.5em;
 }
