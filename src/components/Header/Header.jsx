@@ -1,11 +1,13 @@
 import React from "react";
 import style from './Header.module.css';
+import image from './logo.png';
+
 
 const Header = () => {
     return (
         <header className={style.header}>
             <img
-                src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png'></img>
+                src={image}></img>
         </header>
     )
 }

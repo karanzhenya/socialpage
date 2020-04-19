@@ -1,6 +1,7 @@
 import React from "react";
 import style from './Nav.module.css';
 import {NavLink} from "react-router-dom";
+import FriendsList from "../Friends/FriendsList";
 
 const Nav = () => {
     return (
@@ -10,6 +11,8 @@ const Nav = () => {
             <div className={style.item}><NavLink to='/news' activeClassName={style.activeLink}>News</NavLink></div>
             <div className={style.item}><NavLink to='music' activeClassName={style.activeLink}>Music</NavLink></div>
             <div className={style.item}><NavLink to='settings' activeClassName={style.activeLink}>Settings</NavLink></div>
+            <div className={`${style.item} ${style.friends}`}><NavLink to='friends' activeClassName={style.activeLink}>Friends</NavLink></div>
+            <FriendsList/>
         </nav>)
 }
 
