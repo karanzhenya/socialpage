@@ -1,4 +1,5 @@
 .friendList {
     display: grid;
-    grid-row: 3;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
 }

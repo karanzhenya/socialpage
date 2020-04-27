@@ -14,20 +14,18 @@ import {BrowserRouter, Route} from "react-router-dom";
 const App = (props) => {
 
     return (
-        <BrowserRouter>
-            <div className='app-wrapper'>
-                <Header/>
-                <Nav/>
-                <div className='app-wrapper-content'>
-                    <Route path='/dialogs' render={() => <Dialog dialogs={props.dialogs} messages={props.messages}/>}/>
-                    <Route path='/profile' render={() => <Profile posts={props.posts}/>}/>
-                    <Route path='/news' render={() => <News/>}/>
-                    <Route path='/music' render={() => <Music/>}/>
-                    <Route path='/settings' render={() => <Settings/>}/>
-                    <Route path='/friends' render={() => <Friends/> }/>
-                </div>
+        <div className='app-wrapper'>
+            <Header/>
+            <Nav/>
+            <div className='app-wrapper-content'>
+                <Route path='/dialogs' render={() => <Dialog dialogs={props.state.dialogsPage.dialogs} messages={props.state.dialogsPage.messages}/>}/>
+                <Route path='/profile' render={() => <Profile updateNewPostText={props.updateNewPostText} profilePage={props.state.profilePage} addPost={props.addPost}/>}/>
+                <Route path='/news' render={() => <News/>}/>
+                <Route path='/music' render={() => <Music/>}/>
+                <Route path='/settings' render={() => <Settings/>}/>
+                <Route path='/friends' render={() => <Friends/>}/>
             </div>
-        </BrowserRouter>)
+        </div>)
 }
 
 export default App;

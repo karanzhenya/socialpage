@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
 
     profilePage: {
@@ -5,13 +7,22 @@ let state = {
             {id: 1, message: "Hi! How are you?", likesCount: 12},
             {id: 2, message: "It's my  first post", likesCount: 11},
             {id: 3, message: "Mother of GOD", likesCount: 44}
-        ]
+        ],
+        newPostText: 'kseniya'
     },
     dialogsPage: {
         dialogs: [
-            {id: 1, name: 'Zhenya', ava: 'https://i.pinimg.com/originals/dd/e1/a2/dde1a2daf07cf9631d490fec33a1c0c4.jpg'},
+            {
+                id: 1,
+                name: 'Zhenya',
+                ava: 'https://i.pinimg.com/originals/dd/e1/a2/dde1a2daf07cf9631d490fec33a1c0c4.jpg'
+            },
             {id: 2, name: 'Dima', ava: 'https://cache.kwork.ru/pics/t3/85/109231-1.jpg'},
-            {id: 3, name: 'Andrey', ava: 'https://sun9-29.userapi.com/K9Z99bNoW2AChmr9LmGVGyFAim8MXjQIqb6e-g/uji6cP-Ixmg.jpg?ava=1'},
+            {
+                id: 3,
+                name: 'Andrey',
+                ava: 'https://sun9-29.userapi.com/K9Z99bNoW2AChmr9LmGVGyFAim8MXjQIqb6e-g/uji6cP-Ixmg.jpg?ava=1'
+            },
             {id: 4, name: 'Sasha', ava: 'https://leadmachine.ru/wp-content/uploads/2013/07/123.jpg'},
             {id: 5, name: 'Denis', ava: 'https://bbiz.club/data/avatars/l/149/149034.jpg?1542535443'}
         ],
@@ -25,6 +36,18 @@ let state = {
         ]
     }
 
-}
+};
+export let addPost = () => {
+    let newPost = {
+        id: 4, message: state.profilePage.newPostText, likesCount: 0};
+    state.profilePage.postData.push(newPost);
+    state.profilePage.newPostText = "";
+    rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+};
 
 export default state;
